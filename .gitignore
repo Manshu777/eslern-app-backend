@@ -1,0 +1,86 @@
+# -----------------------------------------
+# Node / NestJS
+# -----------------------------------------
+node_modules/
+dist/
+build/
+coverage/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache
+.cache/
+.pid
+.temp/
+
+# -----------------------------------------
+# Environment files
+# -----------------------------------------
+.env
+.env.production
+.env.development
+.env.local
+.env.test
+
+# Ignore env examples except .env.example
+!.env.example
+
+# -----------------------------------------
+# Prisma
+# -----------------------------------------
+prisma/dev.db
+prisma/*.db-journal
+prisma/migrations/*/migration.sql /* optional if you don't want migration history */
+prisma/.DS_Store
+
+# Prisma generated client (auto-generated)
+**/node_modules/@prisma/client/
+
+# -----------------------------------------
+# MacOS system files
+# -----------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# -----------------------------------------
+# IDE & editor folders
+# -----------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# -----------------------------------------
+# Redis (if running locally)
+# -----------------------------------------
+dump.rdb
+appendonly.aof
+
+# -----------------------------------------
+# Uploads & temp storage
+# -----------------------------------------
+uploads/
+temp/
+tmp/
+*.zip
+
+# -----------------------------------------
+# Docker
+# -----------------------------------------
+docker-data/
+docker-compose.override.yml
+.docker/
+*.pid
+
+# -----------------------------------------
+# Testing
+# -----------------------------------------
+test-results/
+jest-cache/
+jest-html-reporters-*

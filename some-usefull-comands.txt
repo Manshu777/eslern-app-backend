@@ -1,0 +1,1 @@
+npx prisma studio // use for check table stucter like a phpmyadmin 
