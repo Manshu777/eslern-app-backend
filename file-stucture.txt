@@ -1,0 +1,119 @@
+eslearn-backend/
+├── src/
+│   ├── app.module.ts
+│   ├── main.ts
+│   │
+│   ├── common/                     # Reusable across app
+│   │   ├── decorators/
+│   │   ├── filters/
+│   │   ├── guards/
+│   │   ├── interceptors/
+│   │   ├── pipes/
+│   │   └── dto/
+│   │
+│   ├── config/                     # Configuration (env, redis, jwt, s3)
+│   │   ├── configuration.ts
+│   │   ├── redis.config.ts
+│   │   └── s3.config.ts
+│   │
+│   ├── auth/
+│   │   ├── auth.module.ts
+│   │   ├── auth.service.ts
+│   │   ├── auth.controller.ts
+│   │   ├── jwt.strategy.ts
+│   │   ├── jwt-refresh.strategy.ts
+│   │   ├── dto/login.dto.ts
+│   │   └── guards/jwt-auth.guard.ts
+│   │
+│   ├── users/
+│   │   ├── users.module.ts
+│   │   ├── users.service.ts
+│   │   ├── users.controller.ts
+│   │   ├── entities/user.entity.ts
+│   │   └── dto/update-profile.dto.ts
+│   │
+│   ├── exams/
+│   │   ├── exams.module.ts
+│   │   ├── exams.service.ts
+│   │   ├── exams.controller.ts
+│   │   ├── entities/exam.entity.ts
+│   │   └── dto/create-exam.dto.ts
+│   │
+│   ├── subjects/
+│   │   ├── subjects.module.ts
+│   │   ├── subjects.service.ts
+│   │   ├── entities/subject.entity.ts
+│   │
+│   ├── study-materials/
+│   │   ├── study-materials.module.ts
+│   │   ├── study-materials.service.ts
+│   │   ├── study-materials.controller.ts
+│   │   ├── entities/study-material.entity.ts
+│   │   └── dto/upload-material.dto.ts
+│   │
+│   ├── previous-papers/
+│   │   ├── previous-papers.module.ts
+│   │   ├── previous-papers.service.ts
+│   │   ├── previous-papers.controller.ts
+│   │   └── entities/previous-paper.entity.ts
+│   │
+│   ├── mock-tests/
+│   │   ├── mock-tests.module.ts
+│   │   ├── mock-tests.service.ts
+│   │   ├── mock-tests.controller.ts
+│   │   ├── entities/mock-test.entity.ts
+│   │   ├── entities/mock-test-question.entity.ts
+│   │   └── dto/create-mock-test.dto.ts
+│   │
+│   ├── attempts/
+│   │   ├── attempts.module.ts
+│   │   ├── attempts.service.ts
+│   │   ├── attempts.controller.ts
+│   │   ├── entities/student-attempt.entity.ts
+│   │   ├── entities/attempt-answer.entity.ts
+│   │   └── jobs/calculate-result.job.ts     # BullMQ job
+│   │
+│   ├── leaderboard/
+│   │   ├── leaderboard.module.ts
+│   │   ├── leaderboard.service.ts
+│   │   └── leaderboard.gateway.ts           # Socket.io events
+│   │
+│   ├── websocket/
+│   │   ├── websocket.module.ts
+│   │   ├── gateways/
+│   │   │   ├── mock-test.gateway.ts         # Live timer + submit events
+│   │   │   └── leaderboard.gateway.ts
+│   │   └── guards/ws-jwt.guard.ts
+│   │
+│   ├── upload/
+│   │   ├── upload.module.ts
+│   │   ├── upload.service.ts                 # S3 / R2 upload
+│   │   └── multer-s3.config.ts
+│   │
+│   └── analytics/
+│       ├── analytics.module.ts
+│       ├── analytics.service.ts
+│       └── dto/performance.dto.ts
+│
+├── prisma/                              # If using Prisma (Recommended)
+│   └── schema.prisma                    # Full DB schema (all 9 tables you had)
+│
+├── redis/                               # Redis cache services
+│   └── redis.service.ts
+│
+├── queue/                                 # BullMQ for result processing
+│   ├── queues/
+│   │   └── result-calculator.queue.ts
+│   └── processors/
+│       └── result-calculator.processor.ts
+│
+├── test/                                # Jest tests
+│
+├── .env.example
+├── .env
+├── prisma/migrations/
+├── docker-compose.yml
+├── Dockerfile
+├── nest-cli.json
+├── tsconfig.json
+└── package.json
